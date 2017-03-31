@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400|Roboto:100,400,700');
+
+body {
+  background-color: #272E37;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.mainContent {
+  margin-top: 40px;
+}
+
+#sum {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#error {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.poweredby {
+  color: #C8C8C8;
+  font-weight: 100;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.box {
+  height: 320px;
+  max-width: 600%;
+  color: grey;
+  text-shadow: -1px 0 #12212F, 0 1px #12212F, 1px 0 #12212F, 0 -1px #12212F;
+  text-align: center;
+}
+
+.box:nth-child(1) {
+  background: #2B323B; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #4BEDEF, #BBC1F3); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #4BEDEF, #BBC1F3); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #4BEDEF, #BBC1F3); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #4BEDEF, #BBC1F3); /* Standard syntax */
+  text-shadow: none;
+  font-size: 22px;
+}
+
+.box:nth-child(2), .box:nth-child(4), .box:nth-child(5), .box:nth-child(7), .box:nth-child(10), .box:nth-child(12), .box:nth-child(13), .box:nth-child(15), .box:nth-child(18), .box:nth-child(20), .box:nth-child(21), .box:nth-child(23) {
+  border-bottom: 2px solid #BBC1F3;
+}
+
+.box:nth-child(2), .box:nth-child(4), .box:nth-child(5), .box:nth-child(7), .box:nth-child(10), .box:nth-child(12), .box:nth-child(13), .box:nth-child(15), .box:nth-child(18), .box:nth-child(20), .box:nth-child(21), .box:nth-child(23) {
+  background-color: #2B323B;
+}
+
+.box:nth-child(3), .box:nth-child(6), .box:nth-child(8), .box:nth-child(9), .box:nth-child(11), .box:nth-child(14), .box:nth-child(16), .box:nth-child(17), .box:nth-child(19), .box:nth-child(22), .box:nth-child(24) {
+  background-color: #262C35;
+}
+
+.parent {
+  display: table!important;
+  table-layout: fixed!important;
+}
+
+.child {
+  display:table-cell!important;
+  vertical-align:middle!important;
+  text-align:center!important;
+}
+
+.temp {
+  font-size: 52px;
+  padding: 25px 0;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+#summary {
+  color: #fff;
+  line-height: 25px;
+}
+
+.right-arrow {
+  z-index: 100;
+}
+
+.right-arrow:after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -20px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #BBC1F3;
+}
+
+#loading-spinner {
+  margin-top: 220px;
+}
+
+#loading-text {
+  margin-top: 15px;
+  color: #fff;
+}
+
+@media screen and (max-width: 769px) {
+  .right-arrow:after {
+    display: none;
+  }
+
+  .right-arrow {
+    display: none;
+  }
+
+  .box:nth-child(2), .box:nth-child(3), .box:nth-child(6), .box:nth-child(7), .box:nth-child(10), .box:nth-child(11), .box:nth-child(14), .box:nth-child(15), .box:nth-child(18), .box:nth-child(19), .box:nth-child(22), .box:nth-child(23) {
+    background-color: #2B323B;
+  }
+
+  .box:nth-child(4), .box:nth-child(5), .box:nth-child(8), .box:nth-child(9), .box:nth-child(12), .box:nth-child(13), .box:nth-child(16), .box:nth-child(17), .box:nth-child(20), .box:nth-child(21), .box:nth-child(24) {
+    background-color: #262C35;
+  }
+
+  .box:nth-child(2), .box:nth-child(3), .box:nth-child(6), .box:nth-child(7), .box:nth-child(10), .box:nth-child(11), .box:nth-child(14), .box:nth-child(15), .box:nth-child(18), .box:nth-child(19), .box:nth-child(22), .box:nth-child(23) {
+    border-bottom: none;
+  }
+
+  .box:nth-child(4), .box:nth-child(5), .box:nth-child(8), .box:nth-child(9), .box:nth-child(12), .box:nth-child(13), .box:nth-child(16), .box:nth-child(17), .box:nth-child(20), .box:nth-child(21), .box:nth-child(24) {
+    border-bottom: 2px solid #BBC1F3;
+  }
+
+  #summary {
+    font-size: 18px;
+  }
+
+}
