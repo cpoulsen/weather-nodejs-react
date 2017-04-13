@@ -1,6 +1,6 @@
 # React & NodeJS weather app
 
-[Live demo](http://cpweather.herokuapp.com)
+[Live demo](https://cpweather.herokuapp.com)
 
 Get a free api key from [Dark Sky API](https://darksky.net/dev/).
 In `server.js` replace API_KEY with your key
