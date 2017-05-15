@@ -117,10 +117,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            daily: [],
-            hourly: [],
-            hourlySum: '',
-            dailySum: '',
+            weatherData: '',
             loading: true,
             error: null
         };
@@ -135,11 +132,7 @@ class Main extends Component {
         axios.get('/api/forecast/'+latitude+'/'+longitude)
             .then(function (response) {
                 this.setState({
-
-                    daily: response.data.daily.data,
-                    hourly: response.data.hourly.data,
-                    hourlySum: response.data.hourly,
-                    dailySum: response.data.daily,
+                    weatherData: response.data,
                     loading: false,
                     error: null
                 })
@@ -167,7 +160,7 @@ class Main extends Component {
                                 status="loading"
                                 style={style.refresh}
                             />
-                            <p id="loading-text">Fetching your current location - Hang on..</p>
+                            <p id="loading-text">Fetching your current location - Hang on</p>
                         </div>
                     </div>
                 </div>
@@ -193,8 +186,8 @@ class Main extends Component {
                 <Tabs>
                     <Tab label="Hourly" value="hourly" >
                         <div className="row" className="mainContent">
-                            <Summary summary={this.state.hourlySum.summary}/>
-                            {this.state.hourly.slice(0,23).map(hour => {
+                            <Summary summary={this.state.weatherData.hourly.summary}/>
+                            {this.state.weatherData.hourly.data.slice(0,23).map(hour => {
                                 return (
                                     <Hourly
                                         key={hour.time}
@@ -215,8 +208,8 @@ class Main extends Component {
                     </Tab>
                     <Tab label="Daily" value="daily">
                         <div className="row" className="mainContent">
-                            <Summary summary={this.state.dailySum.summary}/>
-                            {this.state.daily.slice(0,7).map(day => {
+                            <Summary summary={this.state.weatherData.daily.summary}/>
+                            {this.state.weatherData.daily.data.slice(0,7).map(day => {
                                 return (
                                     <Daily
                                         key={day.time}
