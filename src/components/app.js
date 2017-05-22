@@ -136,6 +136,12 @@ class Main extends Component {
                     loading: false,
                     error: null
                 })
+            }.bind(this))
+            .catch(function (error) {
+                this.setState({
+                    loading: false,
+                    error: error
+                })
             }.bind(this));
 
         };
@@ -185,7 +191,7 @@ class Main extends Component {
             <MuiThemeProvider muiTheme={muiTheme}>
                 <Tabs>
                     <Tab label="Hourly" value="hourly" >
-                        <div className="row" className="mainContent">
+                        <div className="row mainContent">
                             <Summary summary={this.state.weatherData.hourly.summary}/>
                             {this.state.weatherData.hourly.data.slice(0,23).map(hour => {
                                 return (
@@ -207,7 +213,7 @@ class Main extends Component {
                         <a className="poweredby pull-right" href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
                     </Tab>
                     <Tab label="Daily" value="daily">
-                        <div className="row" className="mainContent">
+                        <div className="row mainContent">
                             <Summary summary={this.state.weatherData.daily.summary}/>
                             {this.state.weatherData.daily.data.slice(0,7).map(day => {
                                 return (
